@@ -4,10 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<link rel="manifest" href="manifest.webmanifest">
 <meta name="apple-mobile-web-app-title" content="Cosa facciamo?">
 <meta name="theme-color" content="#fff4e6">
 <title>Cosa Facciamo Oggi?</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💛</text></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -503,7 +506,7 @@ footer a{ color:var(--terra); font-weight:800; text-decoration:none; }
   <main class="grid" id="grid"></main>
 
   <footer>
-    Fatto con 💛 per Petta 🐒 &amp; Mari 🐥 · Foto: <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a><br>
+    Fatto con 💛 per Petta <img src="petta.svg" alt="Petta" style="height:1.5em;vertical-align:-.4em"> &amp; Mari <img src="mari.svg" alt="Mari" style="height:1.5em;vertical-align:-.4em"> · Foto: <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a><br>
     <button class="btn-ghost" id="footerSettings" type="button">⚙️ Sincronizzazione e backup</button>
   </footer>
 </div>
@@ -1274,7 +1277,7 @@ function bindDetail(a){
   $('#dDone').onclick = () => {
     const was = !!state.done[a.id];
     commit(s => { if(was) delete s.done[a.id]; else s.done[a.id] = new Date().toISOString().slice(0,10); }, `${was ? 'Da rifare' : 'Fatta'}: ${a.t}`);
-    if(!was){ confetti(['🎉','💛','✨','🐒','🐥']); toast('Evviva! Un ricordo in più 💛'); }
+    if(!was){ confetti(['🎉','💛','✨','<img src="petta.svg" alt="" style="width:32px">','<img src="mari.svg" alt="" style="width:32px">']); toast('Evviva! Un ricordo in più 💛'); }
     openDetail(a.id);
   };
   const copy = $('#copyShop');
